@@ -22,7 +22,7 @@ Duis lacinia commodo dui, vel aliquam metus hendrerit eu. Integer et scelerisque
 
 Example code:
 
-{% highlight javascript %}
+```js
 var light = new Light();
 var switchUp = new FlipUpCommand(light);
 var switchDown = new FlipDownCommand(light);
@@ -30,7 +30,7 @@ var s = new Switch();
 
 s.storeAndExecute(switchUp);
 s.storeAndExecute(switchDown);
-{% endhighlight %}
+```
 
 
 A list:
