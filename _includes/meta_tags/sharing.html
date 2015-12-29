@@ -1,13 +1,8 @@
-{% if page.title %} {% assign title = page.title ~ ' - ' ~ page.subtitle %} {% else %} {% assign title = site.title %} {% endif %}
-{% if page.description %} {% assign description = page.description %} {% else %} {% assign description = site.description %} {% endif %}
-{% if page.keywords %} {% assign keywords = page.keywords %} {% else %} {% assign keywords = site.keywords %} {% endif %}
-{% if page.cover %} {% assign cover = page.cover %} {% else %} {% assign cover = site.cover %} {% endif %}
-
 <!-- Twitter Cards -->
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="{{ title }}" />
-<meta name="twitter:description" content="{{ description }}" />
-<meta name="twitter:image" content="{{ site.url }}{{ cover }}" />
+<meta name="twitter:title" content="{% if page.title %} {{ page.title }} - {{ page.subtitle }} {% else %} {{ site.title }} {% endif %}" />
+<meta name="twitter:description" content="{% if page.description %} {{ page.description }} {% else %} {{ site.description }} {% endif %}" />
+<meta name="twitter:image" content="{{ site.url }}{% if page.cover %}{{ page.cover }}{% else %}{{ site.cover }}{% endif %}" />
 
 <!-- Google plus -->
 <meta name="author" content="{{ site.author.googleplus }}">
@@ -16,7 +11,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="{{ site.lang }}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="{{ title }}">
-<meta property="og:description" content="{{ description }}">
+<meta property="og:title" content="{% if page.title %} {{ page.title }} - {{ page.subtitle }} {% else %} {{ site.title }} {% endif %}">
+<meta property="og:description" content="{% if page.description %} {{ page.description }} {% else %} {{ site.description }} {% endif %}">
 <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 <meta property="og:site_name" content="{{ site.title }}">
