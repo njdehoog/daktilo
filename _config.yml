@@ -18,3 +18,7 @@ author:
 
 # Build settings
 markdown: kramdown
+
+theme:
+  footer_text: >
+   Proudly published with [Spelt](http://spelt.io)
